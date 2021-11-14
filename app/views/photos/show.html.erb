@@ -1,19 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @photo.name %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @photo.date %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @photo.rating %>
-</p>
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<div style="margin-top:55px; padding-top:55px;" class="container-fluid text-sm-center p-5 bg-light">
+  <h1 class="display-2"><%= @photo.name %></h1>
+  <p class="lead">
+    <strong>Date:</strong>
+    <%= @photo.date %> | 
+    <strong>Rating:</strong>
+    <%= @photo.rating %>
+  </p>
+<%= link_to 'Edit', edit_photo_path(@photo), class:"btn btn-secondary" %>
+<%= link_to 'Back', photos_path, class:"btn btn-secondary" %>
+</div>
