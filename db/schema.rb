@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_11_14_040247) do
 
   create_table "photos", force: :cascade do |t|
     t.string "name"
-    t.string "capture_date"
+    t.string "date"
     t.string "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
