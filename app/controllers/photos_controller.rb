@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index]
-  before_action :correct_user, only: [:show, :edit, :update, :destroy]
+  # before_action :correct_user, only: [:show, :edit, :update, :destroy]
   # GET /photos or /photos.json
   def index
     @photos = Photo.all
@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
   def create
     #@photo = Photo.new(photo_params)
     @photo = current_user.photos.build(photo_params)
-    @photo.user = current_user
+    
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: "Photo was successfully created." }
@@ -72,6 +72,6 @@ class PhotosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def photo_params
-      params.require(:photo).permit(:user_id, :name, :date, :rating)
+      params.require(:photo).permit(:user_id, :name, :date, :rating, :link)
     end
 end

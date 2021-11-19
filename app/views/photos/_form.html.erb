@@ -18,15 +18,30 @@
 
   <div class="field form-group">
     <%= form.label :date %>
-    <%= form.text_field :date, class:"form-control" %>
+    <%= form.text_field :date, class:"form-control" %> 
   </div>
 
   <div class="field form-group">
+    <%= form.label :link %>
+    <%= form.text_field :link, class:"form-control" %>
+  </div> 
+
+<!--   <div class="field form-group">
     <%= form.label :rating %>
     <%= form.text_field :rating, class:"form-control" %>
-  </div>   <br>
+  </div>    -->
+
+  <% if current_user = 1 %>
+  <div class="field form-group">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, class:"form-control" %>
+  </div>   
+  <% end %>
+
+  <br>
   <div class="actions form-group">
     <%= form.submit class:"btn btn-secondary" %>
   </div>
+
   <br>
 <% end %>
